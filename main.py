@@ -13,9 +13,10 @@ app = FastAPI()
 async def basic():
     print(os.getenv('AZURE_OPENAI_ENDPOINT'))
     #response = sqorz_api_chain.run("récupère les infos pour le comité ffc")
-    # get_sqorz_comities()
+    response = get_sqorz_countries()
     # print(response)
-    return test("Ferenc")
+    # return test("Ferenc")
+    return response
 
 @app.get("/event/test")
 async def root():

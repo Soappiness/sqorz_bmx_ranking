@@ -1,9 +1,8 @@
 import os
 from dotenv import load_dotenv
 from langchain_openai import AzureChatOpenAI
-from langchain.chains import APIChain
 
-load_dotenv(dotenv_path="../.env")
+load_dotenv(dotenv_path=".env")
 
 print(os.getenv("AZURE_OPENAI_ENDPOINT"))
 os.environ["AZURE_OPENAI_ENDPOINT"] = os.getenv("AZURE_OPENAI_ENDPOINT")
@@ -25,11 +24,6 @@ Get informations about french bmx race's organization
 Response: JSON object with data about regionnal and subregionnal comities
 """
 
-sqorz_api_chain = APIChain.from_llm_and_api_docs(
-    llm,
-    sqorz_api_docs,
-    limit_to_domains=[sqorz_base_url]
-)
-
-
-
+def summarize(sqorz_data_input: str):
+    #TODO : summarize data
+    print("summarize method end")
